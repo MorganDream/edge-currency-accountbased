@@ -73,6 +73,9 @@ export class EosPlugin extends CurrencyPlugin {
     if (strippedPrivateKey.length !== 51) {
       throw new Error('Private key wrong length')
     }
+    if (!ecc.isValidPrivate(strippedPrivateKey)) {
+      throw new Error('Invalid private key')
+    }
     return {
       eosOwnerKey: strippedPrivateKey,
       eosKey: strippedPrivateKey
