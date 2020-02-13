@@ -110,8 +110,6 @@ export class EosPlugin extends CurrencyPlugin {
       if (walletInfo.keys.eosOwnerKey) {
         ownerPublicKey = ecc.privateToPublic(walletInfo.keys.eosOwnerKey)
       }
-      console.log('privateKey: ', walletInfo.keys.eosKey)
-      console.log('publicKey: ', publicKey)
       return { publicKey, ownerPublicKey }
     } else {
       throw new Error('InvalidWalletType')
